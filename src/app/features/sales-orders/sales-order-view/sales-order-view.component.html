@@ -1,0 +1,48 @@
+<div class="pagetitle">
+  <h1>Sales Order Items</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item"><a routerLink="/">Sales Order</a></li>
+      <li class="breadcrumb-item">Sales Order items</li>
+    </ol>
+  </nav>
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-6">
+        <a routerLink="/home/sales-orders" class="btn btn-primary mb-3">
+          <i class="bi bi-arrow-left"></i> Back
+        </a>
+        <div class="card">
+          <div class="card-body">
+            <div *ngIf="salesOrder">
+              <div class="card-title"><h3>{{ salesOrder.documentId }}</h3></div>
+              <table class="table datatable mt-5">
+                <caption></caption>
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  <th scope="col">id</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Qty</th>
+                  <th scope="col">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of salesOrder.items">
+                    <th scope="row">{{item.id}}</th>
+                   <td>{{item.id}}</td>
+                  <td>{{item.qty}}</td>
+                  <td>{{item.discount}}</td>
+                  <td>{{item.price}}</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
